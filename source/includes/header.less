@@ -1,0 +1,96 @@
+.top-navbar {
+  background: @third-color;
+  text-align: right;
+  overflow: hidden;
+
+  .logo {
+    float: left;
+  }
+
+  &-toggler {
+
+    .bar {
+      width: 35px;
+      height: 1px;
+      background: white;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    @media @laptop {
+      display: none;
+    }
+  }
+
+  .navigation {
+
+    ul {
+      display: none;
+
+      @media @laptop {
+        display: block;
+      }
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      color: #fff;
+      padding: 30px;
+      font-weight: @semibold;
+      display: inline-block;
+
+      &:hover {
+        background: #ff9b51;
+      }
+    }
+  }
+}
+
+.dropdown-block {
+  //display: none;
+  font-size: 14px;
+  padding: 30px 15px 50px;
+  width: 100%;
+  max-width: 1310px;
+  margin: auto;
+
+  .preview-pages {
+    li {
+      display: inline-block;
+      margin-right: 30px;
+    }
+
+    span {
+      display: block;
+      color: #646464;
+      margin-bottom: 11px;
+    }
+  }
+
+  .list-pages {
+    -webkit-column-count: 4; /* Chrome, Safari, Opera */
+    -moz-column-count: 4; /* Firefox */
+    column-count: 4;
+    -webkit-column-gap: 50px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 50px; /* Firefox */
+    column-gap: 50px;
+    align-self: flex-end;
+
+    li {
+      padding-top: 10px;
+    }
+
+    a {
+      color: #646464;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+

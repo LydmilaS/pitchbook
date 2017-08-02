@@ -6,17 +6,26 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <script src="https://use.fontawesome.com/49cb636043.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="top-navbar">
             <div class="container">
                 <div class="logo">
-                    <a href="/"><img src="assets/images/logo.png" alt="logp"></a>
+                    <a href="index.html"><img src="assets/images/logo.png" alt="logp"></a>
                 </div>
                 <div class="navigation">
+                    <button class="top-navbar-toggler">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
                     <ul>
                         <li><a href="">Features</a></li>
                         <li><a href="">About</a></li>
@@ -27,22 +36,65 @@
                 </div>
             </div>
         </div>
-        <div class="dropdown-block">
-
+        <div class="dropdown-block flex-container">
+            <ul class="preview-pages">
+                <li>
+                    <a href="about.html">
+                        <span>About us</span>
+                        <img src="assets/images/preview-page.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="partners.html">
+                        <span>Our partners</span>
+                        <img src="assets/images/preview-page.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="careers.html">
+                        <span>Careers</span>
+                        <img src="assets/images/preview-page.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="coutact.html">
+                        <span>Coutact us</span>
+                        <img src="assets/images/preview-page.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul class="list-pages">
+                <li><a href="">Product</a></li>
+                <li><a href=""> API and Datafeed</a></li>
+                <li><a href="">Platform</a></li>
+                <li><a href="">Mobile</a></li>
+                <li><a href="">News & Analysis</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Videos</a></li>
+                <li><a href="">Subscribe to N&A</a></li>
+                <li><a href="">News & Analysis</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Videos</a></li>
+                <li><a href="">Subscribe to N&A</a></li>
+                <li><a href="">News & Analysis</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Videos</a></li>
+                <li><a href="">Subscribe to N&A</a></li>
+            </ul>
         </div>
         <div class="header-bottom-section">
-            <div class="container">
+            <div class="container flex-container">
                 <div class="header-download-block">
-                    <h1>MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES</h1>
+                    <h1 class="line-after light-line large-title">MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
                         euismod bibendum laoreet. Proin gravida dolor sit amet lacus
                         accumsan et viverra justo commodo.
                     </p>
-                    <button>Download</button>
+                    <button class="btn btn-transparent">Download</button>
                 </div>
                 <div class="header-form-block">
                     <form action="/" method="POST">
-                        <span class="form-title">Try Your <span class="primary-color">FREE</span> Trial Today</span>
+                        <span class="form-title secondary-bg">Try Your <span class="primary-color">FREE</span> Trial Today</span>
                         <div class="field-row">
                             <input type="text" placeholder="Name">
                         </div>
@@ -53,7 +105,7 @@
                             <input type="password" placeholder="Password">
                         </div>
                         <div class="field-row">
-                            <button type="submit">Get Started</button>
+                            <button type="submit" class="primary-bg">Get Started</button>
                         </div>
                     </form>
                 </div>
@@ -61,9 +113,9 @@
         </div>
     </header>
     <section class="social-media">
-        <div class="container">
+        <div class="container flex-container">
             <div class="social-media-description">
-                <h3>Social Media</h3>
+                <h2 class="title-section-small">Social Media</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Aenean euismod bibendum laoreet.</p>
             </div>
@@ -78,16 +130,16 @@
             </ul>
         </div>
     </section>
-    <section class="tabs-section">
-        <div class="container">
-            <div class="tabs-block">
-                <ul>
-                    <li><a href="#tab1"></a>Tab 1</li>
-                    <li><a href="tab2"></a>Tab 2</li>
-                    <li><a href="#tab3"></a>Tab 3</li>
-                </ul>
-                <div id="tab1">
-                    <h3>Tabs1 with soft transitioning effect.</h3>
+    <section class="tabs-section secondary-bg">
+        <div class="container flex-container">
+            <ul class="tabs-button">
+                <li><a href="" data-tab="tab1" class="active">Tab 1</a></li>
+                <li><a href="" data-tab="tab2">Tab 2</a></li>
+                <li><a href="" data-tab="tab3">Tab 3</a></li>
+            </ul>
+            <div class="active-tab-content simple-text-container">
+                <div id="tab1" class="active">
+                    <h2 class="title-section-small">Tabs1 with soft transitioning effect.</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
                         bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
                         justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
@@ -96,9 +148,10 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
                         bibendum laoreet.
                     </p>
+                    <button class="btn btn-primary btn-round">Download</button>
                 </div>
                 <div id="tab2">
-                    <h3>Tabs2 with soft transitioning effect.</h3>
+                    <h2 class="title-section-small">Tabs2 with soft transitioning effect.</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
                         bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
                         justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
@@ -107,9 +160,10 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
                         bibendum laoreet.
                     </p>
+                    <button class="btn btn-primary btn-round">Download</button>
                 </div>
                 <div id="tab3">
-                    <h3>Tabs3 with soft transitioning effect.</h3>
+                    <h2 class="title-section-small">Tabs3 with soft transitioning effect.</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
                         bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
                         justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
@@ -118,30 +172,30 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
                         bibendum laoreet.
                     </p>
+                    <button class="btn btn-primary btn-round">Download</button>
                 </div>
             </div>
             <div class="img-block"><img src="assets/images/image-right-u255.png" alt=""></div>
         </div>
     </section>
-    <section>
+    <section class="sub-list-section ohidden">
         <div class="container">
-            <img src="assets/images/image-left-sub-list-u260-copy.png" alt="">
-            <div class="info-section">
-                <h2>Sub list section</h2>
+            <div class="info-section simple-text-container">
+                <h2 class="line-after">Sub list section</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
                     euismod bibendum laoreet. Proin gravida dolor sit amet lacus
                     accumsan et viverra justo commodo.
                 </p>
                 <ul>
                     <li>
-                        <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                        <i class="fa fa-cloud-download primary-color" aria-hidden="true"></i>
                         <h3>Title</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Aenean euismod bibendum laoreet.
                         </p>
                     </li>
                     <li>
-                        <i class="fa fa-cloud-download transform" aria-hidden="true"></i>
+                        <i class="rotate180 fa fa-cloud-download primary-color" aria-hidden="true"></i>
                         <h3>Title</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Aenean euismod bibendum laoreet.
@@ -149,46 +203,50 @@
                     </li>
                 </ul>
             </div>
+            <img src="assets/images/image-left-sub-list-u260-copy.png" alt="">
+        </div>
+    </section>
+    <section class="picture-section ohidden secondary-bg">
+        <div class="container">
+            <div class="info-section simple-text-container">
+                <h2 class="line-after">Standard Picture Section</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                    euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
+                    et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
+                    natoque penatibus et magnis dis parturient montes.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                    bibendum laoreet.
+                </p>
+            </div>
+            <img src="assets/images/404-image.png" alt="">
         </div>
     </section>
     <section>
         <div class="container">
-            <h2>Standard Picture Section</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-                euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
-                et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
-                natoque penatibus et magnis dis parturient montes.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-                bibendum laoreet.
-            </p>
-        </div>
-    </section>
-    <section>
-        <div class="container">
-            <h2>WHY THIS IS AWESOME</h2>
+            <h1 class="large-title line-after line-after-center">WHY THIS IS AWESOME</h1>
             <span class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            <ul class="features">
+            <ul class="features flex-container">
                 <li>
-                    <div class="icon-block"></div>
-                    <h3>Thoughtful Design</h3>
+                    <div class="icon-block lamp"></div>
+                    <h2>Thoughtful Design</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Aenean euismod bibendum laoreet. Proin gravida
                         dolor sit amet lacus accumsan et viverra.
                     </p>
                 </li>
                 <li>
-                    <div class="icon-block"></div>
-                    <h3>Well Crafted</h3>
+                    <div class="icon-block keyboard"></div>
+                    <h2>Well Crafted</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Aenean euismod bibendum laoreet. Proin gravida
                         dolor sit amet lacus accumsan et viverra.
                     </p>
                 </li>
                 <li>
-                    <div class="icon-block"></div>
-                    <h3>Easy to Customize</h3>
+                    <div class="icon-block lightness"></div>
+                    <h2>Easy to Customize</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing
                         elit. Aenean euismod bibendum laoreet. Proin gravida
                         dolor sit amet lacus accumsan et viverra.
@@ -197,14 +255,14 @@
             </ul>
         </div>
     </section>
-    <section>
+    <section class="pricing-section secondary-bg">
         <div class="container">
-            <h2>PRICING OPTIONS</h2>
+            <h1 class="large-title line-after line-after-center">PRICING OPTIONS</h1>
             <span class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            <ul class="pricing-plan">
+            <ul class="pricing-plans flex-container">
                 <li>
                     <div class="name-plan">Basic</div>
-                    <div class="price-plan">$0</div>
+                    <div class="price-plan"><span>$</span>0</div>
                     <div class="time-plan">Free for Life</div>
                     <ul>
                         <li>1 gb of space</li>
@@ -217,7 +275,7 @@
                 </li>
                 <li>
                     <div class="name-plan">Professional</div>
-                    <div class="price-plan">$19</div>
+                    <div class="price-plan"><span>$</span>19</div>
                     <div class="time-plan">Monthly Payment</div>
                     <div class="popular-plan">OUR MOST POPULAR</div>
                     <ul>
@@ -231,7 +289,7 @@
                 </li>
                 <li>
                     <div class="name-plan">Enterprise</div>
-                    <div class="price-plan">$70</div>
+                    <div class="price-plan"><span>$</span>70</div>
                     <div class="time-plan">Monthly Payment</div>
                     <ul>
                         <li>Unlimited space</li>
@@ -245,18 +303,20 @@
             </ul>
         </div>
     </section>
-    <section>
+    <section class="feedback-section">
         <div class="container">
-            <h2>WHAT OUR CUSTOMERS ARE SAYING</h2>
+            <h1 class="large-title line-after line-after-center">WHAT OUR CUSTOMERS ARE SAYING</h1>
             <span class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            <u class="carousel">
+            <ul class="carousel">
                 <li class="slide">
-                    <div class="feedback">
-                        Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Doloribus
-                        accusamus expedita repellat similique
-                        odio aspernatur ex, architecto eaque
-                        quo suscipit.
+                    <div class="feedback secondary-bg">
+                        <p>
+                            Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Doloribus
+                            accusamus expedita repellat similique
+                            odio aspernatur ex, architecto eaque
+                            quo suscipit.
+                        </p>
                     </div>
                     <div class="autor-feedback">
                         <img src="assets/images/avatar-2-u231.png" alt="">
@@ -265,12 +325,14 @@
                     </div>
                 </li>
                 <li class="slide">
-                    <div class="feedback">
-                        Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Doloribus
-                        accusamus expedita repellat similique
-                        odio aspernatur ex, architecto eaque
-                        quo suscipit.
+                    <div class="feedback secondary-bg">
+                        <p>
+                            Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Doloribus
+                            accusamus expedita repellat similique
+                            odio aspernatur ex, architecto eaque
+                            quo suscipit.
+                        </p>
                     </div>
                     <div class="autor-feedback">
                         <img src="assets/images/avatar-2-u231.png" alt="">
@@ -279,12 +341,14 @@
                     </div>
                 </li>
                 <li class="slide">
-                    <div class="feedback">
-                        Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Doloribus
-                        accusamus expedita repellat similique
-                        odio aspernatur ex, architecto eaque
-                        quo suscipit.
+                    <div class="feedback secondary-bg">
+                        <p>
+                            Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit. Doloribus
+                            accusamus expedita repellat similique
+                            odio aspernatur ex, architecto eaque
+                            quo suscipit.
+                        </p>
                     </div>
                     <div class="autor-feedback">
                         <img src="assets/images/avatar-2-u231.png" alt="">
@@ -292,50 +356,57 @@
                         <span class="autor-profession">Photographer</span>
                     </div>
                 </li>
-            </u>
+            </ul>
         </div>
     </section>
-    <section>
+    <section class="parallax-section">
         <div class="container">
-            <h2>STYLISH AXURE DESIGN</h2>
+            <h1 class="large-title line-after light-line line-after-center">STYLISH AXURE DESIGN</h1>
             <span class="subtitle">Use the sections you need, remove the ones you don't.  Create gorgeous prototypes faster than ever!</span>
-            <button>Download</button>
+            <button class="btn btn-transparent">Download</button>
         </div>
     </section>
-    <section>
+    <section class="contact-section">
         <div class="container">
-            <h2>CONTACT US</h2>
+            <h1 class="large-title line-after line-after-center">CONTACT US</h1>
             <span class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
             <form action="/" method="POST">
-                <div class="field-row">
-                    <input type="text" placeholder="Name">
+                <div class="left-side">
+                    <div class="field-row">
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div class="field-row">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="field-row">
+                        <input type="text" placeholder="Subject">
+                    </div>
                 </div>
-                <div class="field-row">
-                    <input type="email" placeholder="Email">
+                <div class="right-side">
+                    <div class="field-row">
+                        <textarea name="" id="" cols="30" rows="9" placeholder="Message"></textarea>
+                    </div>
                 </div>
-                <div class="field-row">
-                    <input type="text" placeholder="Subject">
-                </div>
-                <div class="field-row">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
-                </div>
-                <div class="field-row">
-                    <button type="submit">Send Message</button>
+                <div class="field-row clear">
+                    <button type="submit" class="btn btn-primary btn-round">Send Message</button>
                 </div>
             </form>
         </div>
     </section>
     <footer>
-        <ul class="soc-links">
-            <li><a href="" class="fa fa-facebook"></a></li>
-            <li><a href="" class="fa fa-twitter"></a></li>
-            <li><a href="" class="fa fa-google-plus"></a></li>
-            <li><a href="" class="fa fa-pinterest"></a></li>
-            <li><a href="" class="fa fa-instagram"></a></li>
-            <li><a href="" class="fa fa-stumbleupon"></a></li>
-            <li><a href="" class="fa fa-rss"></a></li>
-        </ul>
-        <span class="copyright">&copy; 2016 PitchBook</span>
+        <div class="container">
+            <ul class="soc-links">
+                <li><a href="" class="fa fa-facebook"></a></li>
+                <li><a href="" class="fa fa-twitter"></a></li>
+                <li><a href="" class="fa fa-google-plus"></a></li>
+                <li><a href="" class="fa fa-pinterest"></a></li>
+                <li><a href="" class="fa fa-instagram"></a></li>
+                <li><a href="" class="fa fa-stumbleupon"></a></li>
+                <li><a href="" class="fa fa-rss"></a></li>
+            </ul>
+            <span class="copyright">&copy; 2016 PitchBook</span>
+        </div>
     </footer>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
