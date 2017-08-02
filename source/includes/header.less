@@ -5,6 +5,9 @@
 
   .logo {
     float: left;
+    display: flex;
+    height: 78px;
+    align-items: center;
   }
 
   &-toggler {
@@ -50,7 +53,13 @@
 }
 
 .dropdown-block {
-  //display: none;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.dropdown-block-container  {
+  display: none;
   font-size: 14px;
   padding: 30px 15px 50px;
   width: 100%;

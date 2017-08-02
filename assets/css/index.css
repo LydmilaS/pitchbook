@@ -205,6 +205,9 @@ div.tab:target {
 }
 .top-navbar .logo {
   float: left;
+  display: flex;
+  height: 78px;
+  align-items: center;
 }
 .top-navbar-toggler .bar {
   width: 35px;
@@ -239,22 +242,29 @@ div.tab:target {
   background: #ff9b51;
 }
 .dropdown-block {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.dropdown-block-container {
+  display: none;
   font-size: 14px;
   padding: 30px 15px 50px;
   width: 100%;
   max-width: 1310px;
   margin: auto;
 }
-.dropdown-block .preview-pages li {
+.dropdown-block-container .preview-pages li {
   display: inline-block;
   margin-right: 30px;
 }
-.dropdown-block .preview-pages span {
+.dropdown-block-container .preview-pages span {
   display: block;
   color: #646464;
   margin-bottom: 11px;
 }
-.dropdown-block .list-pages {
+.dropdown-block-container .list-pages {
   -webkit-column-count: 4;
   /* Chrome, Safari, Opera */
   -moz-column-count: 4;
@@ -267,13 +277,13 @@ div.tab:target {
   column-gap: 50px;
   align-self: flex-end;
 }
-.dropdown-block .list-pages li {
+.dropdown-block-container .list-pages li {
   padding-top: 10px;
 }
-.dropdown-block .list-pages a {
+.dropdown-block-container .list-pages a {
   color: #646464;
 }
-.dropdown-block .list-pages a:hover {
+.dropdown-block-container .list-pages a:hover {
   text-decoration: underline;
 }
 footer {
@@ -576,7 +586,7 @@ footer .copyright {
 }
 .parallax-section {
   text-align: center;
-  background: url("../images/custom-panel.png") center / cover no-repeat;
+  background: url("../images/custom-panel.png") center fixed / cover no-repeat;
   padding: 74px 0 63px;
 }
 .parallax-section h1 {
