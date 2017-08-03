@@ -8,5 +8,21 @@ $( document ).ready(function() {
 
         $('.active-tab-content > div').removeClass('active');
         $('div#' + clickTab).addClass('active');
-    })
+    });
+    
+    $('.top-navbar-toggler').on('click', function () {
+        $('nav').toggleClass('menu-open');
+    });
+    $('header').on('mouseenter click',  "*", function (e) {
+
+        if ($(window).width() < 1023) {
+            e.preventDefault();
+        }
+
+        if (e.target.closest('nav')) {
+            $('.dropdown-block').show();
+        } else if (!e.target.closest('.dropdown-block') && !e.target.closest('nav')) {
+            $('.dropdown-block').hide();
+        }
+    });
 });

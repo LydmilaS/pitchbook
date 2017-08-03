@@ -8,13 +8,23 @@
   }
 
   .header-download-block {
-    max-width: 520px;
     color: white;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media @laptop {
+      max-width: 520px;
+      margin-bottom: 0;
+      text-align: left;
+    }
 
     h1 {
-      padding-top: 52px;
       text-transform: uppercase;
       color: white;
+
+      @media @tablet {
+        padding-top: 52px;
+      }
 
       & + p {
         font-family: 'Raleway', sans-serif;
@@ -26,6 +36,12 @@
         margin-bottom: 45px;
       }
     }
+
+    .line-after:after {
+      @media only screen and(max-width: 1023px) {
+        margin: auto;
+      }
+    }
   }
 
   .header-form-block {
@@ -35,6 +51,10 @@
     text-align: center;
     border-radius: @main-radius;
     overflow: hidden;
+
+    @media only screen and(max-width: 1023px) {
+      margin: auto;
+    }
 
     .form-title {
       display: block;
@@ -79,12 +99,23 @@
 
   .tabs-button li {
     border-bottom: 1px solid @secondary-color;
+    display: inline-block;
+    margin-bottom: 30px;
+
+    @media @tablet {
+      display: block;
+      margin-bottom: 0;
+    }
 
     a {
       display: block;
-      padding: 50px 35px;
+      padding: 30px 25px;
       background: @third-color;
       color: #fff;
+
+      @media @tablet {
+        padding: 50px 35px;
+      }
 
       &:hover,
       &.active {
@@ -96,6 +127,7 @@
     width: 100%;
     max-width: 476px;
     align-self: flex-start;
+    margin-bottom: 30px;
 
     & > div {
       display: none;
@@ -104,6 +136,19 @@
         display: block;
       }
     }
+  }
+
+  .img-block {
+
+    @media @tablet {
+      width: 100%;
+      text-align: center;
+    }
+
+    @media @laptop {
+      width: auto;
+    }
+
   }
 }
 
@@ -162,6 +207,7 @@
 
   li {
     text-align: center;
+    margin-bottom: 30px;
 
     @media @tablet {
       width: 40%;
@@ -170,6 +216,7 @@
     @media @laptop {
       width: 32%;
       max-width: 345px;
+      margin-bottom: 0;
     }
   }
 
@@ -212,8 +259,13 @@
       align-items: flex-end;
 
       & > li {
-        width: 32%;
+        width: 100%;
         max-width: 345px;
+        margin-bottom: 30px;
+
+        @media @laptop {
+          width: 32%;
+        }
       }
 
       ul {
@@ -275,16 +327,7 @@
 
 .feedback-section {
 
-  .carousel {
-    display: flex;
-    justify-content: space-between;
-  }
-
   li {
-    list-style-type: none;
-    width: 273px;
-    display: inline-block;
-
     p {
       margin: 0;
       font-style: italic;

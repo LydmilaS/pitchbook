@@ -11,6 +11,9 @@
   }
 
   &-toggler {
+    top: 30px;
+    position: absolute;
+    right: 15px;
 
     .bar {
       width: 35px;
@@ -27,8 +30,23 @@
 
   .navigation {
 
-    ul {
+    nav {
       display: none;
+
+      @media only screen and(max-width: 1023px) {
+        position: absolute;
+        left: 0;
+        background: @third-color;
+        top: 78px;
+        width: 100%;
+        z-index: 10;
+        text-align: left;
+        border-top: 1px solid white;
+      }
+
+      &.menu-open {
+        display: block;
+      }
 
       @media @laptop {
         display: block;
@@ -36,14 +54,24 @@
     }
 
     li {
-      display: inline-block;
+      margin: 0 0 0 -4px;
+
+      @media @laptop {
+        display: inline-block;
+      }
     }
 
     a {
       color: #fff;
-      padding: 30px;
+      padding: 20px 25px;
       font-weight: @semibold;
       display: inline-block;
+      width: 100%;
+
+      @media @laptop {
+        padding: 30px;
+        width: auto;
+      }
 
       &:hover {
         background: #ff9b51;
@@ -53,13 +81,13 @@
 }
 
 .dropdown-block {
+  display: none;
   background: #fff;
   position: absolute;
   left: 0;
   right: 0;
 }
 .dropdown-block-container  {
-  display: none;
   font-size: 14px;
   padding: 30px 15px 50px;
   width: 100%;
@@ -87,6 +115,7 @@
     -moz-column-gap: 50px; /* Firefox */
     column-gap: 50px;
     align-self: flex-end;
+
 
     li {
       padding-top: 10px;
