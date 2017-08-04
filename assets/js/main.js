@@ -1,4 +1,6 @@
 $( document ).ready(function() {
+    $('.slider').mySlider();
+
     $('.tabs-button a').on('click', function (e) {
         e.preventDefault();
         var clickTab = $(this).attr('data-tab');

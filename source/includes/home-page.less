@@ -131,9 +131,22 @@
 
     & > div {
       display: none;
+      transition: all 0.5s;
+
+      @media @tablet {
+        display: inline-block;
+        width: 476px;
+        opacity: 0;
+        position: absolute;
+      }
 
       &.active {
         display: block;
+
+        @media @tablet {
+          display: block;
+          opacity: 1;
+        }
       }
     }
   }
@@ -176,6 +189,7 @@
   }
 
   img {
+    box-shadow: 1px 14px 40px 6px #c3c3c3;
     @media @laptop {
       float: left;
     }
@@ -197,6 +211,7 @@
   }
 
   img {
+    box-shadow: 1px 14px 40px 6px #c3c3c3;
     @media @laptop {
       float: right;
     }

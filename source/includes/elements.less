@@ -63,50 +63,83 @@
   }
 }
 
+.slider {
+  white-space: nowrap;
+  font-size: 0;
+  transition: 0.5s;
 
-.carousel-wrap {
-  position: relative;
+  &-container {
+    position: relative;
+  }
 
-  .slider-wrap {
+  &-wrap {
     overflow: hidden;
   }
 
-  .nav-slider {
+  &-nav {
     position: absolute;
     width: 100%;
     top: 50px;
+
+    .arrow-right,
+    .arrow-left {
+      height: 24px;
+      width: 14px;
+      display: block;
+      position: absolute;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .arrow-right {
+      background: url("../images/right-arrow.png");
+      right: -10px;
+
+      @media @tablet {
+        right: -20px;
+      }
+
+      @media @laptop {
+        right: -60px;
+      }
+    }
+
+    .arrow-left {
+      background: url("../images/left-arrow.png");
+      left: -10px;
+
+      @media @tablet {
+        left: -20px;
+      }
+
+      @media @laptop {
+        left: -60px;
+      }
+    }
   }
 
-  .arrow-right,
-  .arrow-left {
-    height: 24px;
-    width: 14px;
-    display: block;
-    position: absolute;
-  }
+  .slide {
+    white-space: normal;
+    list-style-type: none;
+    display: inline-block;
+    width: 80%;
+    margin: 0 10%;
 
-  .arrow-right {
-    background: url("../images/right-arrow.png");
-    right: -60px;
-  }
 
-  .arrow-left {
-    background: url("../images/left-arrow.png");
-    left: -60px;
-  }
+    @media @tablet {
+      width: 45%;
+      margin-left: 0;
+      margin-right: 10%;
+    }
 
-  .carousel {
-    white-space: nowrap;
-    font-size: 0;
-
-    .slide {
-      white-space: normal;
-      list-style-type: none;
-      display: inline-block;
+    @media @laptop {
+      width: calc(100%/4);
+      margin-left: 0;
+      margin-right: calc(100%/8);
     }
 
   }
-
-
 }
 

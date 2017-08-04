@@ -189,10 +189,32 @@ h2 {
   overflow: hidden;
 }
 
-div.tab:not(:target) {
-  display: none;
+input::-ms-placeholder {
+  color: #bdbdbd;
+  font-size: 14;
 }
 
-div.tab:target {
-  display: block;
+input::-webkit-placeholder {
+  color: #bdbdbd;
+  font-size: 14;
+}
+
+input::placeholder {
+  color: #bdbdbd;
+  font-size: 14;
+}
+
+textarea::-ms-placeholder {
+  color: #bdbdbd;
+  font-size: 14;
+}
+
+textarea::-webkit-placeholder {
+  color: #bdbdbd;
+  font-size: 14;
+}
+
+textarea::placeholder {
+  color: #bdbdbd;
+  font-size: 14;
 }
