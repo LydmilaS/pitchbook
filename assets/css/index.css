@@ -286,9 +286,14 @@ h2 {
 }
 .flex-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
+}
+@media only screen and (min-width: 1024px) {
+  .flex-container {
+    justify-content: space-between;
+  }
 }
 .simple-text-container {
   width: 100%;
@@ -614,6 +619,9 @@ footer .copyright {
     width: auto;
   }
 }
+.sub-list-section {
+  text-align: center;
+}
 .sub-list-section li {
   padding-left: 70px;
   position: relative;
@@ -641,14 +649,27 @@ footer .copyright {
     float: left;
   }
 }
+.sub-list-section .info-section {
+  margin: auto;
+  text-align: left;
+}
 @media only screen and (min-width: 1024px) {
   .sub-list-section .info-section {
     float: right;
+    margin: 0;
   }
+}
+.picture-section {
+  text-align: center;
+}
+.picture-section .info-section {
+  margin: auto;
+  text-align: left;
 }
 @media only screen and (min-width: 1024px) {
   .picture-section .info-section {
     float: left;
+    margin: 0;
   }
 }
 .picture-section img {
@@ -816,7 +837,7 @@ footer .copyright {
 }
 .parallax-section {
   text-align: center;
-  background: url("../images/custom-panel.png") center fixed / cover no-repeat;
+  background: url("../images/header-panel.png") center fixed / cover no-repeat;
   padding: 74px 0 63px;
 }
 .parallax-section h1 {

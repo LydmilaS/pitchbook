@@ -175,9 +175,13 @@ h2 {
 
 .flex-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
+
+  @media @laptop {
+    justify-content: space-between;
+  }
 }
 
 .simple-text-container {
