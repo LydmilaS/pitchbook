@@ -1,27 +1,36 @@
 $( document ).ready(function() {
+
+    //mobile menu
+    $('.top-navbar-toggler').on('click', function () {
+        $('nav').toggleClass('menu-open');
+    });
+
+    // init slider
     $('.slider').mySlider();
 
+    // tabs for many block
     $('.tabs-button a').on('click', function (e) {
         e.preventDefault();
         var clickTab = $(this).attr('data-tab');
 
-        $('.tabs-button a').removeClass('active');
-        $(this).addClass('active');
+        tabs($('.tabs-button a'), $(this));
+        tabs($('.active-tab-content > div'), $('div#' + clickTab));
+    });
 
-        $('.active-tab-content > div').removeClass('active');
-        $('div#' + clickTab).addClass('active');
-    });
+    function tabs(elRmCl, elAddCl) {
+        elRmCl.removeClass('active');
+        elAddCl.addClass('active');
+    }
     
-    $('.top-navbar-toggler').on('click', function () {
-        $('nav').toggleClass('menu-open');
-    });
+    // large menu on hover event
     $('header').on('mouseenter click',  "*", function (e) {
 
         if ($(window).width() < 1023) {
+            // prevent click on mobile
             e.preventDefault();
         }
 
-        if (e.target.closest('nav')) {
+        if (e.target.closest('nav') && e.target.nodeName === "A") {
             $('.dropdown-block').show();
         } else if (!e.target.closest('.dropdown-block') && !e.target.closest('nav')) {
             $('.dropdown-block').hide();

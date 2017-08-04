@@ -1,44 +1,44 @@
-//     function onArrowClick(e) {
-//         e.preventDefault();
-//         var slider = e.target.closest('.carousel-wrap');
-//         var widthSlide = $(slider).width()/4;
-//
-//         if (e.target.classList.contains('arrow-left')) {
-//             console.log(slider);
-//         } else {
-//
-//         }
-//
-//     }
-//
-// })();
 (function( $ ) {
     'use strict';
 
     $.fn.mySlider = function(options) {
-
         var settings = {
-            item: 3,
-            slideMargin: 10,
-            easing: 'linear',
+            transition: 1000,
+            count: 3,
             speed: 2000, //ms'
-            auto: true,
+            auto: false,
             pauseOnHover: true
-        }, i = 0, autoMove;
+        }, i = -1, autoMove, touchstartX;
 
         function autoSlide(slider) {
             if(settings.auto) {
                 autoMove = setInterval(move.bind(this, slider, 'right'), settings.speed);
             }
         }
+
         function bindEvents(slider) {
             slider.next().find('.arrow-left').on('click', move.bind(this, slider, 'left'));
             slider.next().find('.arrow-right').on('click', move.bind(this, slider, 'right'));
-            slider.on('mouseenter', function () {
-                clearInterval(autoMove);
+            slider.closest('.slider-wrap').on('mouseenter', function () {
+                if (settings.pauseOnHover) {
+                    clearInterval(autoMove);
+                }
             });
-            slider.on('mouseleave', function () {
+            slider.closest('.slider-wrap').on('mouseleave', function () {
                 autoSlide(slider);
+            });
+            slider.on('touchstart', function(e) {
+                touchstartX = e.touches[0].clientX;
+            });
+            slider.on('touchend', function(e) {
+                var touchendX = e.changedTouches[0].clientX,
+                    swipe = touchendX - touchstartX;
+
+                if (swipe > 70) {
+                    move($(this), 'left');
+                } else if (swipe < 70) {
+                    move($(this), 'right');
+                }
             });
         }
 
@@ -46,18 +46,34 @@
             slider.wrap( "<div class='slider-wrap'></div>" );
             $('.slider-wrap').wrap( "<div class='slider-container'></div>" );
             $( '<div class="slider-nav"><button class="arrow-left"></button><button class="arrow-right"></button></div>' ).appendTo( ".slider-wrap" );
-            console.log(slider.children().length);
 
-            for (var j = 0; j < slider.children().length; j++ ) {
-                if (j === 3) { continue; }
-                console.log(slider.children()[j]);
-                break;
-            }
+            renderClone(slider);
+            move(slider, 'right');
             bindEvents(slider);
         }
 
+        function renderClone(slider) {
+            var documentFragmentAppend = $(document.createDocumentFragment()),
+                documentFragmentPrepend = $(document.createDocumentFragment());
+
+            for (var k = 0; k < settings.count; k++ ) {
+                var cloneItemAppend = $(slider.children()[k]).clone(true);
+                documentFragmentAppend.append(cloneItemAppend);
+            }
+
+            for (var j = slider.children().length - settings.count; j < slider.children().length; j++ ) {
+                var cloneItemPrepend = $(slider.children()[j]).clone(true);
+                documentFragmentPrepend.append(cloneItemPrepend);
+            }
+
+            documentFragmentAppend.appendTo(slider);
+            documentFragmentPrepend.prependTo(slider);
+
+            move(slider, 'right');
+        }
+
         function move(slider, direction, clickEvent) {
-            var widthMove = $('.slide').outerWidth( true );
+            var widthMove = slider.find('.slide').outerWidth( true );
 
             if (direction === "left") {
                 i += 1;
@@ -65,11 +81,20 @@
                 i -= 1;
             }
 
-            slider.css('transform', 'translate3D('+ widthMove*i + 'px, 0 ,0)');
-        }
+            slider.css({'transform': 'translate3D('+ widthMove*i + 'px, 0 ,0)', 'transition' : settings.transition + 'ms'});
 
-        function touchMove(elm) {
-            console.log('render', elm)
+            if (slider.children().length + i === settings.count ) {
+                setTimeout(function () {
+                    i = -settings.count;
+                    slider.css({'transform': 'translate3D('+ widthMove*i + 'px, 0 ,0)', 'transition' : 'initial'});
+                }, settings.transition);
+
+            } else if (i === 0) {
+                setTimeout(function () {
+                    i = -slider.children().length + settings.count*2;
+                    slider.css({'transform': 'translate3D('+ widthMove*i + 'px, 0 ,0)', 'transition' : 'initial'});
+                }, settings.transition);
+            }
         }
 
         return this.each(function() {
