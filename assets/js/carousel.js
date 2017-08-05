@@ -6,7 +6,7 @@
             transition: 1000,
             count: 3,
             speed: 2000, //ms'
-            auto: false,
+            auto: true,
             pauseOnHover: true
         }, i = -1, autoMove, touchstartX;
 

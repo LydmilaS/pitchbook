@@ -84,31 +84,35 @@
 
     .arrow-right,
     .arrow-left {
-      height: 24px;
-      width: 14px;
+      width: 38px;
+      height: 38px;
       display: block;
       position: absolute;
+      border: 1px solid transparent;
+      border-radius: 100%;
+      background: center no-repeat;
 
       &:hover {
         cursor: pointer;
+        border: 1px solid @main-color;
       }
     }
 
     .arrow-right {
-      background: url("../images/right-arrow.png");
+      background-image: url("../images/right-arrow.png");
       right: -10px;
 
       @media @tablet {
-        right: -20px;
+        right: -34px;
       }
 
       @media @laptop {
-        right: -60px;
+        right: -34px;
       }
     }
 
     .arrow-left {
-      background: url("../images/left-arrow.png");
+      background-image: url("../images/left-arrow.png");
       left: -10px;
 
       @media @tablet {

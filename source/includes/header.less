@@ -1,19 +1,35 @@
 .top-navbar {
   background: @third-color;
   text-align: right;
-  overflow: hidden;
+  //overflow: hidden;
 
-  .logo {
-    float: left;
-    display: flex;
-    height: 78px;
-    align-items: center;
+  nav {
+    position: relative;
+
+    .logo {
+      float: left;
+      display: flex;
+      height: 78px;
+      align-items: center;
+    }
+
+    .navbar-header {
+      overflow: hidden;
+
+      @media @laptop {
+        float: left;
+      }
+    }
   }
 
   &-toggler {
     top: 30px;
     position: absolute;
     right: 15px;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     .bar {
       width: 35px;
@@ -29,44 +45,28 @@
   }
 
   .navigation {
+    display: none;
 
-    nav {
-      display: none;
-
-      @media only screen and(max-width: 1023px) {
-        position: absolute;
-        left: 0;
-        background: @third-color;
-        top: 78px;
-        width: 100%;
-        z-index: 10;
-        text-align: left;
-        border-top: 1px solid white;
-      }
-
-      &.menu-open {
-        display: block;
-      }
-
-      @media @laptop {
-        display: block;
-      }
+    @media only screen and(max-width: 1023px) {
+      text-align: left;
+      border-top: 1px solid white;
     }
 
-    li {
-      margin: 0 0 0 -4px;
-
-      @media @laptop {
-        display: inline-block;
-      }
+    &.menu-open {
+      display: block;
     }
 
-    a {
+    @media @laptop {
+      display: block;
+    }
+
+    a.top-link {
       color: #fff;
       padding: 20px 25px;
       font-weight: @semibold;
       display: inline-block;
       width: 100%;
+
 
       @media @laptop {
         padding: 30px;
@@ -74,61 +74,108 @@
       }
 
       &:hover {
-        background: #ff9b51;
+        background: @main-color;
+      }
+
+      &:active,
+      &:focus {
+        background: transparent;
+        color: @main-color;
+      }
+    }
+
+    & > ul > li {
+      margin: 0 0 0 -4px;
+
+      @media @laptop {
+        display: inline-block;
+      }
+
+      .dropdown-block {
+        display: none;
+        background: #fff;
+        position: absolute;
+        left: -15px;
+        right: -15px;
+        z-index: 10;
+
+        @media @tablet {
+          left: calc(~'370px - 50vw');
+          right: calc(~'370px - 50vw');
+        }
+
+        @media @laptop {
+          left: calc(~'565px - 50vw');
+          right: calc(~'565px - 50vw');
+        }
+      }
+
+      &.dropdownShow {
+        .dropdown-block {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .dropdown-block-container {
+    font-size: 14px;
+    padding: 30px 15px 50px;
+    width: 100%;
+    max-width: 1310px;
+    margin: auto;
+
+    .preview-pages {
+      text-align: center;
+
+      li {
+        display: inline-block;
+        margin-right: 15px;
+        text-align: left;
+
+        @media @laptop {
+          margin-right: 30px;
+        }
+      }
+
+      span {
+        display: block;
+        color: #646464;
+        margin-bottom: 11px;
+      }
+    }
+
+    .list-pages {
+      text-align: left;
+      -webkit-column-count: 2; /* Chrome, Safari, Opera */
+      -moz-column-count: 2; /* Firefox */
+      column-count: 2;
+      -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+      -moz-column-gap: 20px; /* Firefox */
+      column-gap: 20px;
+
+      @media @laptop {
+        -webkit-column-count: 4; /* Chrome, Safari, Opera */
+        -moz-column-count: 4; /* Firefox */
+        column-count: 4;
+        -webkit-column-gap: 50px; /* Chrome, Safari, Opera */
+        -moz-column-gap: 50px; /* Firefox */
+        column-gap: 50px;
+        align-self: flex-end;
+      }
+
+      li {
+        padding-top: 10px;
+      }
+
+      a {
+        color: #646464;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
 }
-
-.dropdown-block {
-  display: none;
-  background: #fff;
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-.dropdown-block-container  {
-  font-size: 14px;
-  padding: 30px 15px 50px;
-  width: 100%;
-  max-width: 1310px;
-  margin: auto;
-
-  .preview-pages {
-    li {
-      display: inline-block;
-      margin-right: 30px;
-    }
-
-    span {
-      display: block;
-      color: #646464;
-      margin-bottom: 11px;
-    }
-  }
-
-  .list-pages {
-    -webkit-column-count: 4; /* Chrome, Safari, Opera */
-    -moz-column-count: 4; /* Firefox */
-    column-count: 4;
-    -webkit-column-gap: 50px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 50px; /* Firefox */
-    column-gap: 50px;
-    align-self: flex-end;
-
-
-    li {
-      padding-top: 10px;
-    }
-
-    a {
-      color: #646464;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
 
