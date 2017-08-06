@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
 }
 
 h1,
@@ -51,6 +52,31 @@ textarea  {
 textarea {
   resize: none;
 }
+
+input::-ms-placeholder {
+  color: @placeholder-color;
+}
+
+input::-webkit-placeholder {
+  color: @placeholder-color;
+}
+
+input::placeholder {
+  color: @placeholder-color;
+}
+
+textarea::-ms-placeholder {
+  color: @placeholder-color;
+}
+
+textarea::-webkit-placeholder {
+  color: @placeholder-color;
+}
+
+textarea::placeholder {
+  color: @placeholder-color;
+}
+
 a,
 a:hover,
 button {
@@ -62,7 +88,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 
 p,
 .subtitle {
@@ -191,34 +216,4 @@ h2 {
 
 .ohidden {
   overflow: hidden;
-}
-
-input::-ms-placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-
-input::-webkit-placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-
-input::placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-
-textarea::-ms-placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-
-textarea::-webkit-placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-
-textarea::placeholder {
-  color: #bdbdbd;
-  font-size: 14;
 }

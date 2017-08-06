@@ -1,88 +1,4 @@
-.header-bottom-section {
-  padding: 60px 0;
-  background: url("../images/header-panel.png") no-repeat center;
-  background-size: cover;
-
-  @media @laptop {
-    padding: 140px 0;
-  }
-
-  .header-download-block {
-    color: white;
-    margin-bottom: 30px;
-    text-align: center;
-
-    @media @laptop {
-      max-width: 523px;
-      margin-bottom: 0;
-      text-align: left;
-    }
-
-    h1 {
-      text-transform: uppercase;
-      color: white;
-
-      @media @tablet {
-        padding-top: 52px;
-      }
-
-      & + p {
-        font-family: 'Raleway', sans-serif;
-        font-weight: 300;
-        font-size: 16px;
-        color: #fff;
-        opacity: 0.61;
-        line-height: 23px;
-        margin-bottom: 45px;
-      }
-    }
-
-    .line-after:after {
-      @media only screen and(max-width: 1023px) {
-        margin: auto;
-      }
-    }
-  }
-
-  .header-form-block {
-    width: 100%;
-    max-width: 374px;
-    background: white;
-    text-align: center;
-    border-radius: @main-radius;
-    overflow: hidden;
-
-    @media only screen and(max-width: 1023px) {
-      margin: auto;
-    }
-
-    .form-title {
-      display: block;
-      font-size: 20px;
-      font-weight: bold;
-      padding: 15px 0;
-    }
-
-    input {
-      width: 80%;
-      max-width: 285px;
-    }
-
-    button {
-      width: 100%;
-      color: #fff;
-      padding: 20px;
-      font-size: 15px;
-      font-weight: @semibold;
-
-      &:hover {
-        background: #fa852b;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
+// media block
 .social-media {
   padding: 20px 0;
 
@@ -94,6 +10,8 @@
     }
   }
 }
+
+//tab block
 
 .tabs-section {
 
@@ -131,22 +49,11 @@
 
     & > div {
       display: none;
-      transition: all 0.5s;
-
-      @media @tablet {
-        display: inline-block;
-        width: 476px;
-        opacity: 0;
-        position: absolute;
-      }
+      width: 476px;
+      position: absolute;
 
       &.active {
         display: block;
-
-        @media @tablet {
-          display: block;
-          opacity: 1;
-        }
       }
     }
   }
@@ -299,7 +206,7 @@
 
         li {
           text-transform: uppercase;
-          color: #86878b;
+          color: @text-color;
           padding: 14px 0;
           border-bottom: 1px solid #c3c4c6;
 
@@ -409,7 +316,7 @@
   }
 
   .autor-profession {
-    color: #86878b;
+    color: @text-color;
   }
 }
 

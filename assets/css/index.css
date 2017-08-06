@@ -163,6 +163,7 @@
 }
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
 }
 h1,
 .large-title {
@@ -203,6 +204,24 @@ textarea {
 }
 textarea {
   resize: none;
+}
+input::-ms-placeholder {
+  color: #bdbdbd;
+}
+input::-webkit-placeholder {
+  color: #bdbdbd;
+}
+input::placeholder {
+  color: #bdbdbd;
+}
+textarea::-ms-placeholder {
+  color: #bdbdbd;
+}
+textarea::-webkit-placeholder {
+  color: #bdbdbd;
+}
+textarea::placeholder {
+  color: #bdbdbd;
 }
 a,
 a:hover,
@@ -330,30 +349,6 @@ h2 {
 .ohidden {
   overflow: hidden;
 }
-input::-ms-placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-input::-webkit-placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-input::placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-textarea::-ms-placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-textarea::-webkit-placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
-textarea::placeholder {
-  color: #bdbdbd;
-  font-size: 14;
-}
 .top-navbar {
   background: #37495e;
   text-align: right;
@@ -367,27 +362,24 @@ textarea::placeholder {
   height: 78px;
   align-items: center;
 }
-.top-navbar nav .navbar-header {
-  overflow: hidden;
-}
 @media only screen and (min-width: 1024px) {
   .top-navbar nav .navbar-header {
     float: left;
   }
 }
 .top-navbar-toggler {
-  top: 30px;
   position: absolute;
+  top: 30px;
   right: 15px;
 }
 .top-navbar-toggler:hover {
   cursor: pointer;
 }
 .top-navbar-toggler .bar {
+  display: block;
   width: 35px;
   height: 1px;
   background: white;
-  display: block;
   margin-bottom: 5px;
 }
 @media only screen and (min-width: 1024px) {
@@ -413,9 +405,9 @@ textarea::placeholder {
   }
 }
 .top-navbar .navigation a.top-link {
-  color: #fff;
-  padding: 20px 25px;
   font-weight: 600;
+  color: rgba(255, 255, 255, 0.69);
+  padding: 20px 25px;
   display: inline-block;
   width: 100%;
 }
@@ -526,27 +518,6 @@ textarea::placeholder {
 .top-navbar .dropdown-block-container .list-pages a:hover {
   text-decoration: underline;
 }
-footer {
-  padding: 20px 0;
-  background: #37495e;
-  text-align: center;
-}
-footer .soc-links li {
-  margin-left: 18px;
-}
-@media only screen and (min-width: 768px) {
-  footer .soc-links li {
-    margin-left: 25px;
-  }
-}
-footer .soc-links a {
-  font-size: 24px;
-}
-footer .copyright {
-  color: #cccccc;
-  padding-top: 15px;
-  display: block;
-}
 .header-bottom-section {
   padding: 60px 0;
   background: url("../images/header-panel.png") no-repeat center;
@@ -594,7 +565,7 @@ footer .copyright {
 }
 .header-bottom-section .header-form-block {
   width: 100%;
-  max-width: 374px;
+  max-width: 360px;
   background: white;
   text-align: center;
   border-radius: 3px;
@@ -625,6 +596,43 @@ footer .copyright {
 .header-bottom-section .header-form-block button:hover {
   background: #fa852b;
   cursor: pointer;
+}
+footer {
+  padding: 20px 0;
+  background: #37495e;
+  text-align: center;
+}
+footer .soc-links li {
+  margin-left: 18px;
+}
+@media only screen and (min-width: 768px) {
+  footer .soc-links li {
+    margin-left: 25px;
+  }
+}
+footer .soc-links a {
+  font-size: 24px;
+  display: block;
+  height: 24px;
+  overflow: hidden;
+}
+footer .soc-links a i:last-child {
+  color: #fff;
+}
+footer .soc-links a i {
+  display: block;
+  transition: .2s;
+}
+footer .soc-links a:hover {
+  transform: none;
+}
+footer .soc-links a:hover i:first-child {
+  margin-top: -24px;
+}
+footer .copyright {
+  color: #cccccc;
+  padding-top: 15px;
+  display: block;
 }
 .social-media {
   padding: 20px 0;
@@ -669,24 +677,11 @@ footer .copyright {
 }
 .tabs-section .active-tab-content > div {
   display: none;
-  transition: all 0.5s;
-}
-@media only screen and (min-width: 768px) {
-  .tabs-section .active-tab-content > div {
-    display: inline-block;
-    width: 476px;
-    opacity: 0;
-    position: absolute;
-  }
+  width: 476px;
+  position: absolute;
 }
 .tabs-section .active-tab-content > div.active {
   display: block;
-}
-@media only screen and (min-width: 768px) {
-  .tabs-section .active-tab-content > div.active {
-    display: block;
-    opacity: 1;
-  }
 }
 @media only screen and (min-width: 768px) {
   .tabs-section .img-block {

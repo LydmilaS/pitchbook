@@ -1,7 +1,6 @@
 .top-navbar {
   background: @third-color;
   text-align: right;
-  //overflow: hidden;
 
   nav {
     position: relative;
@@ -14,7 +13,6 @@
     }
 
     .navbar-header {
-      overflow: hidden;
 
       @media @laptop {
         float: left;
@@ -23,8 +21,8 @@
   }
 
   &-toggler {
-    top: 30px;
     position: absolute;
+    top: 30px;
     right: 15px;
 
     &:hover {
@@ -32,10 +30,10 @@
     }
 
     .bar {
+      display: block;
       width: 35px;
       height: 1px;
       background: white;
-      display: block;
       margin-bottom: 5px;
     }
 
@@ -61,12 +59,11 @@
     }
 
     a.top-link {
-      color: #fff;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.69);
       padding: 20px 25px;
-      font-weight: @semibold;
       display: inline-block;
       width: 100%;
-
 
       @media @laptop {
         padding: 30px;
@@ -179,3 +176,87 @@
   }
 }
 
+.header-bottom-section {
+  padding: 60px 0;
+  background: url("../images/header-panel.png") no-repeat center;
+  background-size: cover;
+
+  @media @laptop {
+    padding: 140px 0;
+  }
+
+  .header-download-block {
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media @laptop {
+      max-width: 523px;
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      color: white;
+
+      @media @tablet {
+        padding-top: 52px;
+      }
+
+      & + p {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        color: #fff;
+        opacity: 0.61;
+        line-height: 23px;
+        margin-bottom: 45px;
+      }
+    }
+
+    .line-after:after {
+      @media only screen and(max-width: 1023px) {
+        margin: auto;
+      }
+    }
+  }
+
+  .header-form-block {
+    width: 100%;
+    max-width: 360px;
+    background: white;
+    text-align: center;
+    border-radius: @main-radius;
+    overflow: hidden;
+
+    @media only screen and(max-width: 1023px) {
+      margin: auto;
+    }
+
+    .form-title {
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 15px 0;
+    }
+
+    input {
+      width: 80%;
+      max-width: 285px;
+    }
+
+    button {
+      width: 100%;
+      color: #fff;
+      padding: 20px;
+      font-size: 15px;
+      font-weight: @semibold;
+
+      &:hover {
+        background: #fa852b;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -14,6 +14,26 @@ footer {
 
     a {
       font-size: 24px;
+      display: block;
+      height: 24px;
+      overflow: hidden;
+
+      i:last-child {
+        color: #fff;
+      }
+
+      i {
+        display: block;
+        transition: .2s;
+      }
+
+      &:hover {
+        transform: none;
+      }
+
+      &:hover i:first-child {
+        margin-top: -24px;
+      }
     }
   }
 
