@@ -70,8 +70,8 @@
 }
 .slider-nav .arrow-right,
 .slider-nav .arrow-left {
-  width: 38px;
-  height: 38px;
+  width: 20px;
+  height: 20px;
   display: block;
   position: absolute;
   border: 1px solid transparent;
@@ -83,18 +83,37 @@
   cursor: pointer;
   border: 1px solid #ff9c50;
 }
+@media only screen and (min-width: 768px) {
+  .slider-nav .arrow-right,
+  .slider-nav .arrow-left {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .slider-nav .arrow-right,
+  .slider-nav .arrow-left {
+    width: 38px;
+    height: 38px;
+  }
+}
 .slider-nav .arrow-right {
   background-image: url("../images/right-arrow.png");
   right: -10px;
 }
 @media only screen and (min-width: 768px) {
   .slider-nav .arrow-right {
-    right: -34px;
+    right: -20px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .slider-nav .arrow-right {
     right: -34px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .slider-nav .arrow-right {
+    right: -60px;
   }
 }
 .slider-nav .arrow-left {
@@ -107,6 +126,11 @@
   }
 }
 @media only screen and (min-width: 1024px) {
+  .slider-nav .arrow-left {
+    left: -34px;
+  }
+}
+@media only screen and (min-width: 1200px) {
   .slider-nav .arrow-left {
     left: -60px;
   }

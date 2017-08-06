@@ -3,12 +3,15 @@
 
     $.fn.mySlider = function(options) {
         var settings = {
-            transition: 1000,
-            count: 3,
-            speed: 2000, //ms'
-            auto: true,
-            pauseOnHover: true
-        }, i = -1, autoMove, touchstartX;
+                transition: 1000,
+                count: 3,
+                speed: 2000, //ms'
+                auto: true,
+                pauseOnHover: true
+            },
+            i = -settings.count,
+            autoMove,
+            touchstartX;
 
         function autoSlide(slider) {
             if(settings.auto) {
@@ -48,13 +51,13 @@
             $( '<div class="slider-nav"><button class="arrow-left"></button><button class="arrow-right"></button></div>' ).appendTo( ".slider-wrap" );
 
             renderClone(slider);
-            move(slider, 'right');
             bindEvents(slider);
         }
 
         function renderClone(slider) {
             var documentFragmentAppend = $(document.createDocumentFragment()),
-                documentFragmentPrepend = $(document.createDocumentFragment());
+                documentFragmentPrepend = $(document.createDocumentFragment()),
+                widthMove = slider.find('.slide').outerWidth( true );
 
             for (var k = 0; k < settings.count; k++ ) {
                 var cloneItemAppend = $(slider.children()[k]).clone(true);
@@ -69,7 +72,7 @@
             documentFragmentAppend.appendTo(slider);
             documentFragmentPrepend.prependTo(slider);
 
-            move(slider, 'right');
+            slider.css({'transform': 'translate3D('+ widthMove*i + 'px, 0 ,0)', 'transition' : 'initial'});
         }
 
         function move(slider, direction, clickEvent) {
@@ -83,7 +86,7 @@
 
             slider.css({'transform': 'translate3D('+ widthMove*i + 'px, 0 ,0)', 'transition' : settings.transition + 'ms'});
 
-            if (slider.children().length + i === settings.count ) {
+            if (slider.children().length + i === settings.count  ) {
                 setTimeout(function () {
                     i = -settings.count;
                     slider.css({'transform': 'translate3D('+ widthMove*i + 'px, 0 ,0)', 'transition' : 'initial'});
@@ -106,6 +109,11 @@
 
             renderSlider($this);
             autoSlide($this);
+
+            $(window).resize(function () {
+                var widthMove = $this.find('.slide').outerWidth( true );
+                $this.css({'transform': 'translate3D('+ widthMove*i + 'px, 0 ,0)', 'transition' : 'initial'});
+            })
         });
     };
 })(jQuery);
