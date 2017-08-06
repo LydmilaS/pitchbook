@@ -102,6 +102,11 @@
         }
 
         @media @laptop {
+          left: calc(~'480px - 50vw');
+          right: calc(~'480px - 50vw');
+        }
+
+        @media @desktop {
           left: calc(~'565px - 50vw');
           right: calc(~'565px - 50vw');
         }
@@ -257,6 +262,25 @@
         background: #fa852b;
         cursor: pointer;
       }
+    }
+  }
+}
+
+.touch-device .navigation > ul > li{
+  .dropdown-block {
+    @media @tablet {
+      left: calc(~'360px - 50vw');
+      right: calc(~'360px - 50vw');
+    }
+
+    @media @laptop {
+      left: calc(~'470px - 50vw');
+      right: calc(~'470px - 50vw');
+    }
+
+    @media @desktop {
+      left: calc(~'555px - 50vw');
+      right: calc(~'555px - 50vw');
     }
   }
 }

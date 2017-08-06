@@ -20,20 +20,23 @@
         }
 
         function bindEvents(slider) {
-            slider.next().find('.arrow-left').on('click', move.bind(this, slider, 'left'));
-            slider.next().find('.arrow-right').on('click', move.bind(this, slider, 'right'));
+            var slideNav = slider.next();
+            slideNav.find('.arrow-left').on('click', move.bind(this, slider, 'left'));
+            slideNav.find('.arrow-right').on('click', move.bind(this, slider, 'right'));
+
             slider.closest('.slider-wrap').on('mouseenter', function () {
                 if (settings.pauseOnHover) {
                     clearInterval(autoMove);
                 }
-            });
-            slider.closest('.slider-wrap').on('mouseleave', function () {
+            })
+            .on('mouseleave', function () {
                 autoSlide(slider);
             });
+
             slider.on('touchstart', function(e) {
                 touchstartX = e.touches[0].clientX;
-            });
-            slider.on('touchend', function(e) {
+            })
+            .on('touchend', function(e) {
                 var touchendX = e.changedTouches[0].clientX,
                     swipe = touchendX - touchstartX;
 

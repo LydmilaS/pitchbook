@@ -8,7 +8,7 @@ var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 
 
-gulp.task('make-scripts', function() {
+gulp.task('make-js', function() {
     return gulp.src('./source/js/*.js')
         .pipe(sourcemaps.init())
             .pipe(concat('all.min.js'))
