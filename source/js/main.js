@@ -7,9 +7,6 @@ $( document ).ready(function() {
     // init slider
     $('.slider').mySlider();
 
-    //init parallax
-    $('.parallax-one').myParallax();
-
     // tabs for many block
     $('.tabs-button a').on('click', function (e) {
         e.preventDefault();
