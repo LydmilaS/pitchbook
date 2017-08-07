@@ -52,6 +52,15 @@ textarea  {
   width: 100%;
   padding: 10px 15px;
   border-bottom: 1px solid rgba(0, 0, 1, 0.16);
+  transition: .2s;
+
+  &:hover {
+    border-bottom: 1px solid rgba(0, 0, 1, 0.5);
+  }
+
+  &:focus {
+    border-bottom: 1px solid @main-color;
+  }
 }
 
 textarea {
